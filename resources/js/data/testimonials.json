@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "name": "Alice Dupont",
+      "text": "Le test était très bien organisé et les résultats sont arrivés le jour même. Merci !",
+      "image": "@/images/test-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jean Martin",
+      "text": "Une expérience fluide et des professionnels compétents. Très satisfait.",
+      "image": "@/images/test-3.jpg"
+    }
+  ]
+  

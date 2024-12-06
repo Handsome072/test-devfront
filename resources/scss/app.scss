@@ -3,3 +3,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary-color: #BF2A6B;
+    --secondary-color: #F8F9FB;
+  }
+  
+  body {
+    background-color: var(--secondary-color);
+    color: #333;
+    margin: 0 ;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.button-secondary{
+    color: white;
+    width: 400px;
+    height: 60px;
+    background: var(--primary-color) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 16px;
+    font:normal 900 20px/32px Lato;
+}
+
+.section-title{
+  font: normal bold 40px/48px Lato;
+  color: var(--primary-color);
+}
