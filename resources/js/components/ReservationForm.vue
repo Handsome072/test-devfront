@@ -1,7 +1,6 @@
 <template>
   <div class="container mx-auto p-6 bg-gray-50 rounded-lg ">
     <div class="reservation-form" @click="closeAllDropdowns">
-      <!-- Barre de recherche -->
       <div class="search-bar bg-white p-5 shadow rounded-2xl">
         <div class="location-input">
           <font-awesome-icon icon="location-dot" class="icon" />
@@ -10,7 +9,6 @@
         <button class="search-button">Rechercher</button>
       </div>
 
-      <!-- Filtres -->
       <div class="filters">
         <div class="filter-dropdown" @click.stop="toggleDropdown('month')">
           <span>{{ selectedMonth || 'Filtrer par mois' }}</span>
@@ -61,7 +59,6 @@
       </div>
     </div>
 
-    <!-- Recherche en cours -->
     <div class="loading-section">
       <div class="loading-circle"></div>
       <span class="loading-text">Recherche en cours</span>
@@ -73,14 +70,12 @@
  
  <div class="container mx-auto bg-gray-50">
   <div class="flex flex-col lg:flex-row gap-6">
-    <!-- Section Gauche -->
     <div class="flex-[2] rounded-lg ">
       <div
         v-for="n in 6"
         :key="n"
         class="p-4 rounded-lg bg-white border w-full mb-4"
       >
-        <!-- Contenu de la section gauche -->
         <div class="flex items-center justify-between">
           <p class="text-lg font-semibold">Lundi</p>
           <p class="text-lg">04 Novembre 2024</p>
@@ -121,18 +116,12 @@
     </button>
   </div>
   </div>
- 
-
+  
  <div class="bg-gray-50 p-6 rounded-lg bg-white rounded-lg shadow mb-4 text-center space-y-4 relative">
   <img src="@/images/true.png" alt="Check icon" class="h-6 w-6 mx-auto" />
   <p class="text-3xl font-semibold text-black">97,7%</p>
-  
-
   <p class="text-gray-600 text-sm">Taux de réussite <br> à nos tests psychotechniques</p>
-  
-
   <div class="flex justify-between items-center absolute inset-0 px-4">
-  
     <button class="flex items-center justify-center h-full">
       <font-awesome-icon icon="chevron-left" class="w-5 h-5 text-gray-500 cursor-pointer" />
     </button>
