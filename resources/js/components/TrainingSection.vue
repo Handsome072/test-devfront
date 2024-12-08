@@ -1,7 +1,6 @@
 <template>
   <section class="bg-white training-section py-16 px-6 md:px-20">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-[52px]">
-      <!-- Texte à gauche -->
       <div class="md:w-1/2">
         <h2 class="section-title mb-6">
           Votre entraînement Gratuit inclus
@@ -21,7 +20,6 @@
         </button>
       </div>
 
-      <!-- Image à droite -->
       <div class="md:w-1/2">
         <img src="@/images/training.png" alt="Votre entraînement" class="rounded-lg shadow-lg" />
       </div>

@@ -1,7 +1,7 @@
 <template>
   <header class="bg-[#F8F9FB] relative">
     <div class="container mx-auto px-4 py-8 lg:py-12">
-      <div class="flex justify-center lg:justify-start">
+      <div class="flex justify-center lg:justify-start logo">
         <img src="@/images/logo.png" alt="Logo Centre National" class="h-16" />
       </div>
       <div
@@ -38,7 +38,7 @@
               <span>Je réserve mon test psychotechnique</span>
               <font-awesome-icon icon="chevron-right" class="w-4 h-4" />
             </button>
-            <div class="flex items-center mt-5">
+            <div class="flex items-center header-hand mt-5">
               <img
                 src="@/images/hand.png"
                 alt=""
@@ -100,6 +100,7 @@ export default {
 </script>
 
 <style scoped>
+
 .header-content h1 {
   font: bold 35px/51px Lato;
   color: #1e1e1e;
@@ -133,9 +134,26 @@ export default {
   margin-right: -50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1020px) {
   header {
-    text-align: center;
+    text-align: left; 
+  }
+  .list-text{
+    margin-top: 40px !important;
+  }
+  h1,p {
+text-align: left;
+  }
+
+  .logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fb; 
+    z-index: 1000; 
+    padding: 10px 0;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   }
 
   .header-content {
@@ -146,10 +164,15 @@ export default {
     text-align: center;
     gap: 20px;
     margin: 0 auto;
+    margin-top: 100px
   }
 
+header .header-hand{
+  justify-content: center;
+}
   .header-content .lg {
     width: 100%;
+    
   }
 
   .header-content .youtube-img {
@@ -193,7 +216,7 @@ export default {
     max-width: 400px;
   }
   .header-content .list-offert {
-    padding-left: 10%;
+    padding-left: 4%;
   }
 }
 </style>
