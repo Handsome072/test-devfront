@@ -19,7 +19,7 @@
        
       </div>
       <div class="step-content lg:w-1/2 text-center lg:text-left space-y-6 relative">
-        <h2 class="text-[#BF2A6B] text-3xl lg:text-4xl font-bold leading-tight">
+        <h2 class="section-title">
           Votre test psychotechnique en 3 étapes :
         </h2>
         <div class="step-space">
@@ -113,6 +113,7 @@ ul li div {
 .step-space{
   padding-left:50px ;
 }
+
 .round-image {
   width: 9rem;
   height: 9rem;
@@ -144,11 +145,19 @@ ul li div {
   width: 80%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .step-content p {
+  font: normal 18px;
+}
+.step-content h2 {
+  font: normal 18px;
+}
+}
+@media (max-width: 800px) {
 
   .round-image {
     top:20px;
@@ -157,5 +166,9 @@ ul li div {
     left: -50px;
     transform: none;
   }
+  .step-content p {
+  font-size: 18px ;
+}
+
 }
 </style>

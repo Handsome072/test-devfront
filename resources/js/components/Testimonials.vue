@@ -4,18 +4,18 @@
       Ce qu'en pensent nos candidats
     </h2>
     <div
-      class="container bg-white p-12 shadow-lg mx-auto flex items-center flex-col lg:flex-row gap-6 px-12"
+      class="container bg-white p-12 shadow-lg mx-auto flex items-center flex-col lg:flex-row gap-6"
     >
-      <div class="flex-col basis-1/4 flex-grow-0 rounded-lg">
-        <h2>Exellent</h2>
-        <img src="@/images/stars.png" alt="" class="w-32 h-1" />
-        <p>Based on <strong>414 review</strong></p>
-        <img src="@/images/google.png" alt="" class="b w-32 h-20" />
+    
+      <div class="flex-col basis-1/4 flex-grow-0 rounded-lg text-center">
+        <h2 class="text-xl font-semibold mb-2">Excellent</h2>
+        <img src="@/images/stars.png" alt="Évaluation étoiles" class="w-24 mb-2 mx-auto" />
+        <p class="text-sm text-gray-700">
+          Based on <strong>414 reviews</strong>
+        </p>
+        <img src="@/images/google.png" alt="Logo Google" class="w-24 h-12 mt-4 mx-auto" />
       </div>
-
-      <div
-        class="relative caroussel-content w-full flex-grow basis-2/3 overflow-hidden"
-      >
+      <div class="relative caroussel-content w-full flex-grow basis-2/3 overflow-hidden">
         <div
           class="flex transition-transform duration-500 ease-in-out"
           :class="{ 'transition-none': !isTransitioning }"
@@ -26,31 +26,30 @@
           <div
             v-for="(testimonial, index) in extendedTestimonials"
             :key="index"
-            class="w-[33.3%] flex-shrink-0 flex flex-col items-center"
+            class="flex-shrink-0 flex flex-col items-center px-4"
+            :style="{ width: `${100 / itemsPerView}%` }"
           >
-            <div
-              class="w-full h-full mb-4 flex items-center justify-center gap-4"
-            >
+            <div class="w-full flex items-center justify-center gap-4 mb-4">
               <img
                 v-if="testimonial.image"
                 :src="testimonial.image"
                 alt="Photo de l'utilisateur"
-                class="rounded-full w-20 h-20 object-cover"
+                class="rounded-full w-16 h-16 object-cover"
               />
               <span
                 v-else
-                class="text-lg font-bold text-white bg-gray-400 w-20 h-20 flex items-center justify-center rounded-full"
+                class="text-lg font-bold text-white bg-gray-400 w-16 h-16 flex items-center justify-center rounded-full"
               >
                 {{ testimonial.name.charAt(0).toUpperCase() }}
               </span>
               <div>
                 <p class="text-lg font-semibold">{{ testimonial.name }}</p>
-                <p class="text-sm text-gray-600 mb-4">{{ testimonial.date }}</p>
+                <p class="text-sm text-gray-500">{{ testimonial.date }}</p>
               </div>
             </div>
-            <div class="ps-20">
-              <img src="@/images/stars.png" alt="Étoiles" class="w-24 mt-4" />
-              <p class="text-sm max-w-md text-gray-700">
+            <div class="text-center">
+              <img src="@/images/stars.png" alt="Étoiles" class="w-20 mx-auto" />
+              <p class="text-sm text-gray-600 mt-2">
                 {{ testimonial.review }}
               </p>
             </div>
@@ -59,13 +58,13 @@
 
         <button
           @click="prevSlide"
-          class="absolute top-1/2 left-4 transform -translate-y-1/2 p-3 rounded-full hover:scale-110 transition"
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 p-3 bg-gray-200 rounded-full hover:scale-110 transition"
         >
           <font-awesome-icon icon="chevron-left" class="w-4 h-4" />
         </button>
         <button
           @click="nextSlide"
-          class="absolute top-1/2 right-4 transform -translate-y-1/2 p-3 rounded-full hover:scale-110 transition"
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 p-3 bg-gray-200 rounded-full hover:scale-110 transition"
         >
           <font-awesome-icon icon="chevron-right" class="w-4 h-4" />
         </button>
@@ -156,37 +155,27 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .testimonials-section {
   padding: 120px 0;
 }
-.testimonials-section h2 {
-  font: bold 35px/51px Lato;
+.section-title {
+  font: bold 35px/51px Lato, sans-serif;
   color: #1e1e1e;
 }
-.caroussel-item {
-  background-color: rgb(188, 185, 185);
-  text-align: left;
-  margin-right: 20x;
-  padding: 20px;
+.caroussel-content {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
 }
-
 button {
   cursor: pointer;
+}
+button:hover {
+  background-color: #e5e5e5;
 }
 .transition-none {
   transition: none !important;
 }
-button.flex.items-center.justify-center.h-full {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.font-awesome-icon {
-  vertical-align: middle;
-}
-
 </style>

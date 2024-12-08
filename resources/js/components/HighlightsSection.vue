@@ -46,6 +46,7 @@ export default {
 .highlights-section {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   background-color: #bf2a6b;
   padding: 60px 30px;
@@ -56,7 +57,8 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 200px;
+  min-width: 200px;
+  max-width: 210px;
 }
 
 .highlight-icon {
@@ -69,5 +71,13 @@ export default {
   font: normal normal normal 20px/27px Nunito, sans-serif;
   letter-spacing: 0px;
   color: #ffffff;
+}
+
+@media (max-width: 800px) {
+.highlight {
+margin-bottom: 50px;
+min-width: 300px;
+}
+
 }
 </style>

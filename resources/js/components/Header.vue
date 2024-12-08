@@ -100,7 +100,6 @@ export default {
 </script>
 
 <style scoped>
-
 .header-content h1 {
   font: bold 35px/51px Lato;
   color: #1e1e1e;
@@ -121,7 +120,7 @@ export default {
   margin-top: 50px;
   width: 400px;
   height: 60px;
-  background: #bf2a6b 0% 0% no-repeat padding-box;
+  background: var(--primary-color) 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 16px;
   font: normal 900 20px/32px Lato;
@@ -136,13 +135,17 @@ export default {
 
 @media (max-width: 1020px) {
   header {
-    text-align: left; 
+    text-align: left;
+    padding-bottom: 100px;
   }
-  .list-text{
+
+  .list-text {
     margin-top: 40px !important;
   }
-  h1,p {
-text-align: left;
+
+  h1,
+  p {
+    text-align: left;
   }
 
   .logo {
@@ -150,8 +153,8 @@ text-align: left;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #f8f9fb; 
-    z-index: 1000; 
+    background-color: #f8f9fb;
+    z-index: 1000;
     padding: 10px 0;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   }
@@ -164,15 +167,15 @@ text-align: left;
     text-align: center;
     gap: 20px;
     margin: 0 auto;
-    margin-top: 100px
+    margin-top: 100px;
   }
 
-header .header-hand{
-  justify-content: center;
-}
+  header .header-hand {
+    justify-content: center;
+  }
+
   .header-content .lg {
     width: 100%;
-    
   }
 
   .header-content .youtube-img {
@@ -217,6 +220,15 @@ header .header-hand{
   }
   .header-content .list-offert {
     padding-left: 4%;
+  }
+}
+
+@media (max-width: 600px) {
+ .youtube img {
+    height: 300px;
+  }
+   .header-content .absolute {
+    top: -370px !important;
   }
 }
 </style>
