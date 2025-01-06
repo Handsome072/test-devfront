@@ -8,10 +8,10 @@
         class="header-content relative flex flex-col-reverse lg:flex-row items-center lg:items-start mt-7 lg:mt-7"
       >
         <div class="lg:w-1/2 text-center lg:text-left">
-          <h1>Test psychotechnique : Récupérez votre permis</h1>
+     <h1>Test psychotechnique : Récupérez <span class="highlight"> votre permis</span></h1>
           <p class="list-text">Une démarche simple & rapide</p>
           <div class="list-offert">
-            <ul class="mt-6 space-y-4">
+            <ul class="mt-6">
               <li class="flex items-center">
                 <img src="@/images/true.png" alt="Check icon" class="h-6 w-7" />
                 <span class="ml-3 text-gray-700 text-sm lg:text-base">
@@ -34,9 +34,9 @@
           </div>
 
           <div class="mt-6">
-            <button class="button-secondary">
+           <button class="button-secondary">
               <span>Je réserve mon test psychotechnique</span>
-              <font-awesome-icon icon="chevron-right" class="w-4 h-4" />
+              <font-awesome-icon icon="chevron-right" class="w-4 h-4 ml-2" />
             </button>
             <div class="flex items-center header-hand mt-5">
               <img
@@ -99,40 +99,44 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .header-content h1 {
-  font: bold 35px/51px Lato;
+  font: bold 33px/51px "Lato", sans-serif;
   color: #1e1e1e;
 }
+
 .header-content p {
-  font: 18px/27px Nunito;
+  font: 18px/27px ;
 }
+
+.highlight {
+    border-bottom: 4px solid #BF2A6B;
+}
+
 .header-content .list-text {
-  font: 25px/41px Lato;
-  margin-top: 50px;
+  font: 25px/41px "Lato", sans-serif;
 }
 
 .header-content ul span {
-  font: 21px/35px Nunito;
+  font: 21px/35px;
 }
 
-.header-content button {
-  margin-top: 50px;
-  width: 400px;
-  height: 60px;
-  background: var(--primary-color) 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  border-radius: 16px;
-  font: normal 900 20px/32px Lato;
-}
 .youtube img {
   border-radius: 20px;
   width: 650px;
   height: 400px;
   margin-top: 50px;
-  margin-right: -50px;
+  margin-right: -100px;
 }
 
+.header-content .list-offert {
+  margin-top: 60px;
+  margin-bottom: 45px;
+  }
+
+.header-content .list-offert li{
+  margin-top: 15px;
+  }
 @media (max-width: 1020px) {
   header {
     text-align: left;

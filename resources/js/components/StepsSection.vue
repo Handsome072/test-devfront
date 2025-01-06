@@ -23,7 +23,7 @@
           Votre test psychotechnique en 3 étapes :
         </h2>
         <div class="step-space">
-          <ul class="space-y-12 relative">
+          <ul class=" relative">
             <div
               class="absolute left-5 top-0 h-full border-l-4 border-[#BF2A6B] transform -translate-x-1/2"
             ></div>
@@ -35,7 +35,7 @@
               >
                 1
               </div>
-              <p class="text-gray-700 text-lg text-start">
+              <p>
                 <strong>Réservez en ligne :</strong> Choisissez votre créneau
                 horaire et votre psychologue agréé.
               </p>
@@ -48,7 +48,7 @@
               >
                 2
               </div>
-              <p class="text-gray-700 text-lg text-start">
+              <p >
                 <strong>Passez votre test :</strong> Vous serez accueilli par un
                 de nos psychologues qui vous expliquera le déroulement du test.
               </p>
@@ -61,16 +61,16 @@
               >
                 3
               </div>
-              <p class="text-gray-700 text-lg text-start">
+              <p>
                 <strong>Recevez vos résultats :</strong> Vous recevrez vos
                 résultats le jour même de votre test.
               </p>
             </li>
           </ul>
           <div class="mt-6">
-            <button class="button-secondary mt-5">
+               <button class="button-secondary">
               <span>Je réserve mon test psychotechnique</span>
-              <font-awesome-icon icon="chevron-right" class="w-4 h-4" />
+              <font-awesome-icon icon="chevron-right" class="w-4 h-4 ml-2" />
             </button>
           </div>
         </div>
@@ -87,10 +87,13 @@ export default {
 </script>
 
 <style scoped>
+.section-title{
+margin-bottom: 73px;
+}
+
 .step-content p {
-  font: normal 21px/28px Lato;
-  letter-spacing: 0px;
-  color: #424242;
+font-size: 20px;
+  margin-top: -5px;
 }
 
 ul li div {
@@ -102,7 +105,7 @@ ul li {
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 55px;
 }
 
 ul li div {
@@ -157,18 +160,19 @@ ul li div {
   font: normal 18px;
 }
 }
+
 @media (max-width: 800px) {
 
   .round-image {
     top:20px;
     bottom: 10px;
-    
     left: -50px;
     transform: none;
   }
+
   .step-content p {
   font-size: 18px ;
 }
-
 }
+
 </style>

@@ -4,18 +4,30 @@
       Ce qu'en pensent nos candidats
     </h2>
     <div
-      class="container bg-white p-12 shadow-lg mx-auto flex items-center flex-col lg:flex-row gap-6"
+      class="container bg-white p-12 shadow-lg mx-auto flex flex-col lg:flex-row gap-6 items-center"
     >
-    
-      <div class="flex-col basis-1/4 flex-grow-0 rounded-lg text-center">
-        <h2 class="text-xl font-semibold mb-2">Excellent</h2>
-        <img src="@/images/stars.png" alt="Évaluation étoiles" class="w-24 mb-2 mx-auto" />
+      <!-- Sidebar gauche -->
+      <div
+        class="hidden lg:block flex-col basis-1/4 flex-grow-0 rounded-lg text-center"
+      >
+        <h2 class="text-2xl font-semibold mb-2">Excellent</h2>
+        <img
+          src="@/images/stars.png"
+          alt="Évaluation étoiles"
+          class="w-24 mb-2 mx-auto"
+        />
         <p class="text-sm text-gray-700">
           Based on <strong>414 reviews</strong>
         </p>
-        <img src="@/images/google.png" alt="Logo Google" class="w-24 h-12 mt-4 mx-auto" />
+        <img
+          src="@/images/google.png"
+          alt="Logo Google"
+          class="w-24 h-24 mx-auto"
+        />
       </div>
-      <div class="relative caroussel-content w-full flex-grow basis-2/3 overflow-hidden">
+
+      <!-- Carrousel -->
+      <div class="relative caroussel-content flex-grow overflow-hidden">
         <div
           class="flex transition-transform duration-500 ease-in-out"
           :class="{ 'transition-none': !isTransitioning }"
@@ -26,47 +38,65 @@
           <div
             v-for="(testimonial, index) in extendedTestimonials"
             :key="index"
-            class="flex-shrink-0 flex flex-col items-center px-4"
-            :style="{ width: `${100 / itemsPerView}%` }"
+            class="flex-none w-full md:w-1/3 px-4"
           >
-            <div class="w-full flex items-center justify-center gap-4 mb-4">
-              <img
-                v-if="testimonial.image"
-                :src="testimonial.image"
-                alt="Photo de l'utilisateur"
-                class="rounded-full w-16 h-16 object-cover"
-              />
-              <span
-                v-else
-                class="text-lg font-bold text-white bg-gray-400 w-16 h-16 flex items-center justify-center rounded-full"
-              >
-                {{ testimonial.name.charAt(0).toUpperCase() }}
-              </span>
-              <div>
-                <p class="text-lg font-semibold">{{ testimonial.name }}</p>
-                <p class="text-sm text-gray-500">{{ testimonial.date }}</p>
+            <!-- Carte du témoignage -->
+            <div
+              class="bg-[#00000029] rounded-lg p-6 pb-10 h-full text-left shadow-md"
+            >
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden mr-4"
+                  :class="testimonial.image ? 'bg-gray-300' : 'bg-green-500'"
+                >
+                  <template v-if="testimonial.image">
+                    <img
+                      :src="testimonial.image"
+                      alt="Image de témoignage"
+                      class="rounded-full w-full h-full object-cover"
+                    />
+                  </template>
+                  <template v-else>
+                    <span class="text-lg font-bold text-white">
+                      {{ testimonial.name.charAt(0).toUpperCase() }}
+                    </span>
+                  </template>
+                </div>
+                <!-- Nom et Date -->
+                <div>
+                  <h3 class="font-bold text-lg">
+                    {{ testimonial.name }}
+                  </h3>
+                  <p class=" text-sm text-gray-600">
+                    {{ testimonial.date }}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="text-center">
-              <img src="@/images/stars.png" alt="Étoiles" class="w-20 mx-auto" />
-              <p class="text-sm text-gray-600 mt-2">
-                {{ testimonial.review }}
-              </p>
+
+              <!-- Contenu des étoiles et avis (aligné séparément) -->
+              <div class="text-left">
+                <img src="@/images/stars.png" alt="Étoiles" class="w-20 mb-3" />
+                <p class="caroussel-text">
+                  {{ testimonial.review }}
+                </p>
+                <a href="javascript:void(0);">Read more</a>
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- Boutons de navigation -->
         <button
           @click="prevSlide"
-          class="absolute top-1/2 left-4 transform -translate-y-1/2 p-3 bg-gray-200 rounded-full hover:scale-110 transition"
+          class="absolute top-1/2 btn-navigation -left-4 transform -translate-y-1/2 p-4 transition"
         >
-          <font-awesome-icon icon="chevron-left" class="w-4 h-4" />
+          ‹
         </button>
         <button
           @click="nextSlide"
-          class="absolute top-1/2 right-4 transform -translate-y-1/2 p-3 bg-gray-200 rounded-full hover:scale-110 transition"
+          class="absolute top-1/2 -right-4 btn-navigation transform -translate-y-1/2 p-4 transition"
         >
-          <font-awesome-icon icon="chevron-right" class="w-4 h-4" />
+          ›
         </button>
       </div>
     </div>
@@ -132,6 +162,13 @@ export default {
     },
   },
   methods: {
+    updateItemsPerView() {
+      if (window.innerWidth < 768) {
+        this.itemsPerView = 1;
+      } else {
+        this.itemsPerView = 3;
+      }
+    },
     nextSlide() {
       this.isTransitioning = true;
       this.currentIndex++;
@@ -153,29 +190,64 @@ export default {
       }
     },
   },
+  mounted() {
+    this.updateItemsPerView();
+    window.addEventListener("resize", this.updateItemsPerView);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.updateItemsPerView);
+  },
 };
 </script>
+
 <style scoped>
 .testimonials-section {
   padding: 120px 0;
 }
+
 .section-title {
-  font: bold 35px/51px Lato, sans-serif;
+  font: bold 35px/51px "Lato", sans-serif;
   color: #1e1e1e;
 }
-.caroussel-content {
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
-  overflow: hidden;
-}
-button {
-  cursor: pointer;
-}
-button:hover {
-  background-color: #e5e5e5;
-}
+
 .transition-none {
   transition: none !important;
+}
+
+.caroussel-content {
+  padding: 13px;
+  width: 100%;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .caroussel-content {
+    padding: 10px 12px;
+  }
+
+  .caroussel-content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+img {
+  display: block;
+}
+
+.btn-navigation {
+  font-size: 45px;
+  color: #00000070;
+}
+
+.text-left p {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Lato", sans-serif;
+}
+.text-left a {
+  font-size: 15px;
+  color: #00000083;
+  font-weight: bold;
 }
 </style>

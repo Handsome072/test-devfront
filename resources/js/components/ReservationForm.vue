@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-6 bg-gray-50 rounded-lg ">
+  <div class="container mx-auto pt-6 bg-gray-50 rounded-lg">
     <div class="reservation-form" @click="closeAllDropdowns">
       <div class="search-bar bg-white p-5 shadow rounded-2xl">
         <div class="location-input">
@@ -9,9 +9,9 @@
         <button class="search-button">Rechercher</button>
       </div>
 
-      <div class="filters">
+      <div class="filters ps-10 p-5 rounded-lg">
         <div class="filter-dropdown" @click.stop="toggleDropdown('month')">
-          <span>{{ selectedMonth || 'Filtrer par mois' }}</span>
+          <span>{{ selectedMonth || "Filtrer par mois" }}</span>
           <font-awesome-icon icon="chevron-down" class="dropdown-icon" />
           <ul v-if="dropdowns.month" class="dropdown-list">
             <li
@@ -25,7 +25,7 @@
         </div>
 
         <div class="filter-dropdown" @click.stop="toggleDropdown('day')">
-          <span>{{ selectedDay || 'Filtrer par jour' }}</span>
+          <span>{{ selectedDay || "Filtrer par jour" }}</span>
           <font-awesome-icon icon="chevron-down" class="dropdown-icon" />
           <ul v-if="dropdowns.day" class="dropdown-list">
             <li
@@ -39,7 +39,7 @@
         </div>
 
         <div class="filter-dropdown" @click.stop="toggleDropdown('halfDay')">
-          <span>{{ selectedHalfDay || 'Filtrer par demi-journée' }}</span>
+          <span>{{ selectedHalfDay || "Filtrer par demi-journée" }}</span>
           <font-awesome-icon icon="chevron-down" class="dropdown-icon" />
           <ul v-if="dropdowns.halfDay" class="dropdown-list">
             <li
@@ -52,10 +52,19 @@
           </ul>
         </div>
 
-        <button class="filter-button">Filtrer</button>
-        <button class="reset-button" @click="resetFilters">
-          <span class="reset-text">Réinitialiser les filtres</span>
-        </button>
+        <div class="flex flex-col items-center space-y-4">
+          <button
+            class="bg-gray-600 text-white w-80 px-4 py-3 rounded-md hover:bg-blue-600 transition"
+          >
+            FILTRER
+          </button>
+          <button
+            class="text-blue-500 underline hover:text-blue-700"
+            @click="resetFilters"
+          >
+            Réinitialiser les filtres
+          </button>
+        </div>
       </div>
     </div>
 
@@ -67,91 +76,141 @@
       <div class="progress"></div>
     </div>
   </div>
- 
- <div class="container mx-auto bg-gray-50">
-  <div class="flex flex-col lg:flex-row gap-6">
-    <div class="flex-[2] rounded-lg ">
-      <div
-        v-for="n in 6"
-        :key="n"
-        class="p-4 rounded-lg bg-white border w-full mb-4"
-      >
-        <div class="flex items-center justify-between">
-          <p class="text-lg font-semibold">Lundi</p>
-          <p class="text-lg">04 Novembre 2024</p>
-        </div>
-        <div class="flex items-center space-x-2">
-          <font-awesome-icon icon="location-dot" class="text-gray-700 w-5 h-5" />
-          <p class="text-gray-700">50 avenue d'Essômes, 02400 Château-Thierry</p>
-        </div>
-        <div class="flex items-center space-x-2">
-          <font-awesome-icon icon="triangle-exclamation" class="text-red-600 w-5 h-5" />
-          <p class="text-red-600 font-medium">Dernière places à cette date</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <p class="text-xl font-semibold text-[#BF2A6B]">77€</p>
-          <button
-            class="bg-[#BF2A6B] text-white py-3 px-6 rounded-lg shadow-lg hover:bg-[#9E2453] flex items-center space-x-2"
+
+  <div class="container mx-auto bg-gray-50">
+    <div class="flex flex-col lg:flex-row gap-6">
+      <div class="flex-[2] rounded-lg">
+        <div
+          v-for="n in 6"
+          :key="n"
+          class="p-4 rounded-lg bg-white border w-full mb-4 flex"
+        >
+        
+          <div class="left-content flex-[7] p-4">
+            <p class="text-lg font-semibold">Lundi</p>
+            <div class="flex mb-3 items-center space-x-4 mt-3">
+              <p class="text-lg border-b border-gray-300 pb-2">
+                04 Novembre 2024
+                <font-awesome-icon
+                  icon="location-dot"
+                  class="text-gray-700 w-5 h-5"
+                />
+                Z50 avenue d'Essômes, 02400 Château-Thierry
+              </p>
+            </div>
+
+            <div class="flex items-center space-x-2">
+              <p class="text-xl font-semibold text-[#BF2A6B] bg-[#F8F9FB] p-2">
+                02 Château-Thierry
+              </p>
+              <font-awesome-icon
+                icon="triangle-exclamation"
+                class="text-red-600 w-5 h-5"
+              />
+              <p class="text-red-600 font-medium">
+                Dernière places à cette date
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="right-content flex-[2] p-6 flex flex-col items-center justify-center ml-5 border-l border-gray-300 space-y-3"
           >
-            <span>Réserver</span>
-            <font-awesome-icon icon="chevron-right" class="w-4 h-4" />
-          </button>
+            <div class="text-center flex items-end space-x-2">
+              <p class="text-2xl font-semibold price">77 €</p>
+              <p class="text-gray-400 text-sm line-through align-text-bottom">
+                120 €
+              </p>
+            </div>
+            <p class="text-xs text-gray-600 text-price">Après remboursement*</p>
+            <button
+              class="bg-[#BF2A6B] text-white py-3 px-10 rounded-lg shadow-lg hover:bg-[#9E2453] flex items-center space-x-2"
+            >
+              <span>Réserver</span>
+              <font-awesome-icon icon="chevron-right" class="w-4 ps-2 h-4" />
+            </button>
+            <p class="text-xs text-gray-600 text-price">
+              3 places disponibles à cette date
+            </p>
+          </div>
         </div>
-        <p class="text-gray-500 text-sm">3 places disponibles à cette date</p>
+      </div>
+
+      <div class="flex-2 space-y-6 mb-5 rounded-lg">
+        <div class="bg-white shadow pb-5">
+          <div class="text-center bg-blue-600 text-white mb-5 py-2">
+            <p class="font-semibold">Les tests par ville à Aisne (02)</p>
+          </div>
+          <div class="flex justify-center mb-4 space-x-4 py-5">
+            <button
+              class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
+            >
+              Château-Thierry
+            </button>
+            <button
+              class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
+            >
+              Saint-Quentin
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-50 p-6 rounded-lg bg-white rounded-lg shadow mb-4 text-center space-y-4 relative"
+        >
+          <img
+            src="@/images/true.png"
+            alt="Check icon"
+            class="h-6 w-6 mx-auto"
+          />
+          <p class="text-3xl font-semibold text-black">97,7%</p>
+          <p class="text-gray-600 text-sm">
+            Taux de réussite <br />
+            à nos tests psychotechniques
+          </p>
+          <div class="flex justify-between items-center absolute inset-0 px-4">
+            <button class="flex items-center justify-center h-full">
+              <font-awesome-icon
+                icon="chevron-left"
+                class="w-5 h-5 text-gray-500 cursor-pointer"
+              />
+            </button>
+            <button class="flex items-center justify-center h-full">
+              <font-awesome-icon
+                icon="chevron-right"
+                class="w-5 h-5 text-gray-500 cursor-pointer"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center space-x-4">
+          <div class="flex flex-col shadow bg-white items-center">
+            <img
+              src="@/images/etoile.png"
+              alt="Google stars"
+              style="width: 131px; height: 90px"
+            />
+          </div>
+          <div class="flex flex-col shadow bg-white items-center">
+            <img
+              src="@/images/trustpilot.png"
+              alt="Trustpilot stars"
+              style="width: 170px; height: 85px"
+            />
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <img
+            src="@/images/car.jpg"
+            alt="Car"
+            class="rounded-lg shadow-lg w-full max-w-md"
+          />
+        </div>
       </div>
     </div>
-
- 
-<div class="flex-2 space-y-6 mb-5 rounded-lg">
-  <div class="bg-white shadow pb-5">
- <div class="text-center bg-blue-600 text-white mb-5 py-2">
-    <p class="font-semibold">Les tests par ville à Aisne (02)</p>
   </div>
-  <div class="flex justify-center   mb-4 space-x-4 py-5">
-    <button class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow">
-      Château-Thierry
-    </button>
-    <button class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow">
-      Saint-Quentin
-    </button>
-  </div>
-  </div>
-  
- <div class="bg-gray-50 p-6 rounded-lg bg-white rounded-lg shadow mb-4 text-center space-y-4 relative">
-  <img src="@/images/true.png" alt="Check icon" class="h-6 w-6 mx-auto" />
-  <p class="text-3xl font-semibold text-black">97,7%</p>
-  <p class="text-gray-600 text-sm">Taux de réussite <br> à nos tests psychotechniques</p>
-  <div class="flex justify-between items-center absolute inset-0 px-4">
-    <button class="flex items-center justify-center h-full">
-      <font-awesome-icon icon="chevron-left" class="w-5 h-5 text-gray-500 cursor-pointer" />
-    </button>
-    <button class="flex items-center justify-center h-full">
-      <font-awesome-icon icon="chevron-right" class="w-5 h-5 text-gray-500 cursor-pointer" />
-    </button>
-  </div>
-</div>
-
-
-  <div class="flex justify-between items-center space-x-4">
-    <div class="flex flex-col shadow bg-white items-center">
-      <img src="@/images/etoile.png" alt="Google stars" style="width: 131px; height: 90px;" />
-    </div>
-    <div class="flex flex-col shadow bg-white  items-center">
-      <img src="@/images/trustpilot.png" alt="Trustpilot stars" style="width: 170px; height: 85px;" />
-    
-    </div>
-  </div>
-
-  <div class="flex justify-center">
-    <img src="@/images/car.jpg" alt="Car" class="rounded-lg shadow-lg w-full max-w-md" />
-  </div>
-</div>
-
-  </div>
-</div>
-
-
-
 </template>
 
 
@@ -174,7 +233,15 @@ export default {
         "Novembre",
         "Décembre",
       ],
-      days: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+      days: [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+        "Dimanche",
+      ],
       halfDays: ["Matin", "Après-midi"],
       dropdowns: { month: false, day: false, halfDay: false },
       selectedMonth: null,
@@ -188,11 +255,11 @@ export default {
         this.dropdowns[key] = key === type ? !this.dropdowns[key] : false;
       });
     },
-selectOption(type, value) {
-  this[`selected${type.charAt(0).toUpperCase() + type.slice(1)}`] = value;
+    selectOption(type, value) {
+      this[`selected${type.charAt(0).toUpperCase() + type.slice(1)}`] = value;
 
-  this.closeAllDropdowns();
-},
+      this.closeAllDropdowns();
+    },
     closeAllDropdowns() {
       Object.keys(this.dropdowns).forEach((key) => {
         this.dropdowns[key] = false;
@@ -222,7 +289,7 @@ selectOption(type, value) {
 
 
 <style scoped>
-.container{
+.container {
   padding-bottom: 50px;
 }
 .reservation-form {
@@ -230,7 +297,7 @@ selectOption(type, value) {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .search-bar {
@@ -277,6 +344,7 @@ selectOption(type, value) {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  background-color: #59575743;
 }
 
 .filter-dropdown {
@@ -284,16 +352,17 @@ selectOption(type, value) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  font-size: 16px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  font-size: 18px;
+  border-top: 1px solid rgb(80, 80, 80);
+  border-bottom: 1px solid rgb(80, 80, 80);
   border-left: none;
   border-right: none;
   outline: none;
-  background-color: #fff;
-  width: 200px;
+  width: 250px;
   cursor: pointer;
+  height: 40px;
+  margin-top: 30px;
 }
 
 .dropdown-icon {
@@ -376,7 +445,7 @@ selectOption(type, value) {
 }
 
 .progress {
-  width: 20%; 
+  width: 20%;
   height: 100%;
   background-color: #36578a;
 }
@@ -394,18 +463,27 @@ selectOption(type, value) {
   align-items: center;
   gap: 10px;
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
 }
 
 .filters {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 10px;
-  width: 100%; 
-  justify-content: space-between; 
+  width: 100%;
+  justify-content: space-between;
 }
 .icon {
-  width: 1.25rem; 
+  width: 1.25rem;
   height: 1.25rem;
+}
+
+.price {
+  font: normal normal bold 30px "Lato", sans-serif;
+  letter-spacing: 0px;
+}
+
+.text-price {
+  font: normal normal normal 14px "Nunito", sans-serif;
 }
 </style>
