@@ -184,22 +184,23 @@
           </div>
         </div>
 
-        <div class="flex justify-between items-center space-x-4">
-          <div class="flex flex-col shadow bg-white items-center">
-            <img
-              src="@/images/etoile.png"
-              alt="Google stars"
-              style="width: 131px; height: 90px"
-            />
-          </div>
-          <div class="flex flex-col shadow bg-white items-center">
-            <img
-              src="@/images/trustpilot.png"
-              alt="Trustpilot stars"
-              style="width: 170px; height: 85px"
-            />
-          </div>
-        </div>
+      <div class="flex justify-between items-center space-x-2">
+  <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
+    <img
+      src="@/images/etoile.png"
+      alt="Google stars"
+      style="width: 131px; height: 90px"
+    />
+  </div>
+  <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
+     <img
+      src="@/images/trustpilot.png"
+      alt="Trustpilot stars"
+      style="width: 170px; height: 90px"
+    />
+  </div>
+</div>
+
 
         <div class="flex justify-center">
           <img
