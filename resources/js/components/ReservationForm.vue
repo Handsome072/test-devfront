@@ -134,55 +134,57 @@
           </div>
         </div>
       </div>
+<div class="flex-2 space-y-6 mb-5 rounded-lg">
+  <!-- Section Tests par Ville -->
+  <div class="bg-white shadow pb-5">
+    <div class="text-center bg-blue-600 text-white mb-5 py-2">
+      <p class="font-semibold">Les tests par ville à Aisne (02)</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 mb-4 py-5">
+      <button
+        class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
+      >
+        Château-Thierry
+      </button>
+      <button
+        class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
+      >
+        Saint-Quentin
+      </button>
+    </div>
+  </div>
 
-      <div class="flex-2 space-y-6 mb-5 rounded-lg">
-        <div class="bg-white shadow pb-5">
-          <div class="text-center bg-blue-600 text-white mb-5 py-2">
-            <p class="font-semibold">Les tests par ville à Aisne (02)</p>
-          </div>
-          <div class="flex justify-center mb-4 space-x-4 py-5">
-            <button
-              class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
-            >
-              Château-Thierry
-            </button>
-            <button
-              class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
-            >
-              Saint-Quentin
-            </button>
-          </div>
-        </div>
+  <!-- Section Taux de Réussite -->
+  <div
+    class="bg-gray-50 p-6 rounded-lg bg-white shadow mb-4 text-center space-y-4 relative"
+  >
+    <img
+      src="@/images/true.png"
+      alt="Check icon"
+      class="h-6 w-6 mx-auto"
+    />
+    <p class="text-3xl font-semibold text-black">97,7%</p>
+    <p class="text-gray-600 text-sm">
+      Taux de réussite <br />
+      à nos tests psychotechniques
+    </p>
+    <div class="flex justify-between items-center absolute inset-0 px-4">
+      <button class="flex items-center justify-center h-full">
+        <font-awesome-icon
+          icon="chevron-left"
+          class="w-5 h-5 text-gray-500 cursor-pointer"
+        />
+      </button>
+      <button class="flex items-center justify-center h-full">
+        <font-awesome-icon
+          icon="chevron-right"
+          class="w-5 h-5 text-gray-500 cursor-pointer"
+        />
+      </button>
+    </div>
+  </div>
 
-        <div
-          class="bg-gray-50 p-6 rounded-lg bg-white rounded-lg shadow mb-4 text-center space-y-4 relative"
-        >
-          <img
-            src="@/images/true.png"
-            alt="Check icon"
-            class="h-6 w-6 mx-auto"
-          />
-          <p class="text-3xl font-semibold text-black">97,7%</p>
-          <p class="text-gray-600 text-sm">
-            Taux de réussite <br />
-            à nos tests psychotechniques
-          </p>
-          <div class="flex justify-between items-center absolute inset-0 px-4">
-            <button class="flex items-center justify-center h-full">
-              <font-awesome-icon
-                icon="chevron-left"
-                class="w-5 h-5 text-gray-500 cursor-pointer"
-              />
-            </button>
-            <button class="flex items-center justify-center h-full">
-              <font-awesome-icon
-                icon="chevron-right"
-                class="w-5 h-5 text-gray-500 cursor-pointer"
-              />
-            </button>
-          </div>
-        </div>
-
+  <!-- Section Évaluations -->
         <div class="flex justify-between items-center space-x-2">
           <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
             <img
@@ -200,14 +202,15 @@
           </div>
         </div>
 
-        <div class="flex justify-center">
-          <img
-            src="@/images/car.jpg"
-            alt="Car"
-            class="rounded-lg shadow-lg w-full max-w-md"
-          />
-        </div>
-      </div>
+  <!-- Section Image -->
+  <div class="flex justify-center">
+    <img
+      src="@/images/car.jpg"
+      alt="Car"
+      class="rounded-lg shadow-lg w-full max-w-md"
+    />
+  </div>
+</div>
     </div>
   </div>
 </template>
@@ -566,4 +569,5 @@ export default {
   }
 
 }
+
 </style>
