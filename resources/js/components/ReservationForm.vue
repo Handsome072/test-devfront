@@ -137,9 +137,10 @@
 <div class="flex-2 space-y-6 mb-5 rounded-lg">
   <!-- Section Tests par Ville -->
   <div class="bg-white shadow pb-5">
-    <div class="text-center bg-blue-600 text-white mb-5 py-2">
-      <p class="font-semibold">Les tests par ville à Aisne (02)</p>
-    </div>
+    <div class="text-center bg-[#36578a] text-white mb-5 py-2">
+  <p class="font-semibold">Les tests par ville à Aisne (02)</p>
+</div>
+
     <div class="flex flex-wrap justify-center gap-4 mb-4 py-5">
       <button
         class="bg-gray-100 text-gray-800 py-2 px-4 rounded-full shadow"
