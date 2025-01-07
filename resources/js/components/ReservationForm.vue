@@ -487,4 +487,26 @@ export default {
 .text-price {
   font: normal normal normal 14px "Nunito", sans-serif;
 }
+
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column-reverse;
+    align-items: stretch; 
+  }
+
+  .filter-dropdown {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+
+  .flex {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .flex button {
+    width: 100%; 
+  }
+}
+
 </style>
