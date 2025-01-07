@@ -137,7 +137,7 @@
 <div class="flex-2 space-y-6 mb-5 rounded-lg">
   <!-- Section Tests par Ville -->
   <div class="bg-white shadow pb-5">
-    <div class="text-center bg-[#36578a] text-white mb-5 py-2">
+    <div class="text-ville bg-[#36578a] text-white mb-5 py-2">
   <p class="font-semibold">Les tests par ville à Aisne (02)</p>
 </div>
 
@@ -490,6 +490,10 @@ export default {
   font: normal normal normal 14px "Nunito", sans-serif;
 }
 
+.text-ville p{
+  text-align: center !important;
+  
+}
 @media screen and (max-width: 768px) {
   .container {
     padding: 10px
