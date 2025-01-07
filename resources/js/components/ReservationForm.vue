@@ -85,7 +85,6 @@
           :key="n"
           class="p-4 rounded-lg bg-white border w-full mb-4 flex"
         >
-        
           <div class="left-content flex-[7] p-4">
             <p class="text-lg font-semibold">Lundi</p>
             <div class="flex mb-3 items-center space-x-4 mt-3">
@@ -184,23 +183,22 @@
           </div>
         </div>
 
-      <div class="flex justify-between items-center space-x-2">
-  <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
-    <img
-      src="@/images/etoile.png"
-      alt="Google stars"
-      style="width: 131px; height: 90px"
-    />
-  </div>
-  <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
-     <img
-      src="@/images/trustpilot.png"
-      alt="Trustpilot stars"
-      style="width: 170px; height: 90px"
-    />
-  </div>
-</div>
-
+        <div class="flex justify-between items-center space-x-2">
+          <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
+            <img
+              src="@/images/etoile.png"
+              alt="Google stars"
+              style="width: 131px; height: 90px"
+            />
+          </div>
+          <div class="flex flex-col shadow bg-white items-center p-2 w-1/2">
+            <img
+              src="@/images/trustpilot.png"
+              alt="Trustpilot stars"
+              style="width: 170px; height: 90px"
+            />
+          </div>
+        </div>
 
         <div class="flex justify-center">
           <img
@@ -489,24 +487,66 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .filters {
-    flex-direction: column-reverse;
-    align-items: stretch; 
-  }
-
-  .filter-dropdown {
-    width: 100%; 
-    margin-top: 10px; 
+  .container {
+    padding: 10px
   }
 
   .flex {
-    flex-direction: column; 
+    flex-direction: column;
+    gap: 20px;
+  }
+
+ 
+
+  .left-content {
+    flex: none;
+    width: 100%; 
+    padding: 10px; 
+  }
+
+  .right-content {
+    flex: none;
+    width: 100%;
+    margin-left: 0; 
+    border-left: none; 
+    border-top: 1px solid #ccc; 
+    padding: 10px; 
+  }
+
+  .right-content .text-center {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .right-content button {
     width: 100%;
   }
 
-  .flex button {
-    width: 100%; 
+  .price {
+    font-size: 1.5rem;
   }
-}
 
+  .text-price {
+    font-size: 0.875rem;
+  }
+
+  .space-y-6 {
+    gap: 10px;
+  }
+
+  .rounded-lg img {
+    max-width: 100%;
+    height: auto; 
+  }
+
+  .bg-white.shadow {
+    padding: 10px; 
+  }
+
+  .flex.justify-between {
+    flex-direction: column; 
+    gap: 10px; 
+  }
+
+}
 </style>
