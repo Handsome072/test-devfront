@@ -496,7 +496,24 @@ export default {
     gap: 20px;
   }
 
- 
+  .filters {
+    flex-direction: column-reverse;
+    align-items: stretch; 
+  }
+
+  .filter-dropdown {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+
+  .flex {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .flex button {
+    width: 100%; 
+  }
 
   .left-content {
     flex: none;
