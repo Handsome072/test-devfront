@@ -132,4 +132,56 @@ button {
 .faq-border > div:last-child {
   border-bottom: none;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 50px 20px;
+  }
+
+  .faq-title {
+    font-size: 24px; /* Réduit la taille du titre */
+    line-height: 36px;
+  }
+
+  .accordion {
+    padding: 30px; /* Réduit le padding pour économiser de l'espace */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Légère réduction de l'ombre */
+  }
+
+  button {
+    padding: 12px; /* Réduit le padding des boutons */
+  }
+
+  button span {
+    font-size: 16px; /* Réduction de la taille de la police des questions */
+  }
+
+  .faq-border > div {
+    border-bottom-width: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .faq-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .accordion {
+    padding: 20px;
+  }
+
+  button span {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
+
 </style>
