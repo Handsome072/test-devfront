@@ -1,14 +1,14 @@
 <template>
   <section class="bg-white py-10" @click="closeAll">
-    <div class="container mx-auto" @click.stop>
-      <h2 class="text-center" :style="{ color: '#36578A' }">
+    <div class="container accordion mx-auto" @click.stop>
+      <h2 class="faq-title " :style="{ color: '#36578A' }">
         Préparez votre test psychotechnique
       </h2>
-      <div class="accordion">
+      <div class="faq-border">
         <div
           v-for="(item, index) in faqs"
           :key="index"
-          class="border-b border-gray-200"
+          class="border-b "
         >
           <button
             class="flex justify-between items-center w-full p-4 focus:outline-none"
@@ -113,11 +113,11 @@ export default {
   padding: 100px 0;
 }
 
-.container h2 {
-  font: normal normal 600 40px/48px Lato;
+.container .faq-title{
+  font: normal normal 600 30px/45px "lato", sans-serif;
   letter-spacing: 0px;
   color: #36578a;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 }
 
 button {
@@ -127,9 +127,9 @@ button {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 57px;
 }
-.accordion > div:last-child {
+.faq-border > div:last-child {
   border-bottom: none;
 }
 </style>

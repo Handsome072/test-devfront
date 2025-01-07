@@ -1,8 +1,11 @@
 <template>
   <section class="bg-[#F8F9FB] testimonials-section">
-    <h2 class="section-title text-center mb-8">
+    <div class="container mx-auto">
+     <h2 class="section-title mb-8">
       Ce qu'en pensent nos candidats
     </h2>
+    </div>
+  
     <div
       class="container bg-white p-12 shadow-lg mx-auto flex flex-col lg:flex-row gap-6 items-center"
     >
@@ -203,11 +206,6 @@ export default {
 <style scoped>
 .testimonials-section {
   padding: 120px 0;
-}
-
-.section-title {
-  font: bold 35px/51px "Lato", sans-serif;
-  color: #1e1e1e;
 }
 
 .transition-none {
