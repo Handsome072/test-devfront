@@ -139,21 +139,21 @@ button {
   }
 
   .faq-title {
-    font-size: 24px; /* Réduit la taille du titre */
+    font-size: 24px;
     line-height: 36px;
   }
 
   .accordion {
-    padding: 30px; /* Réduit le padding pour économiser de l'espace */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Légère réduction de l'ombre */
+    padding: 30px; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
   }
 
   button {
-    padding: 12px; /* Réduit le padding des boutons */
+    padding: 12px; 
   }
 
   button span {
-    font-size: 16px; /* Réduction de la taille de la police des questions */
+    font-size: 16px; 
   }
 
   .faq-border > div {
